@@ -1,0 +1,9 @@
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.bg-custom {
+    background-color: #0E0B16 !important;
+}
