@@ -1,0 +1,41 @@
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-text {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  /* transform: translate(-50%, -50%); */
+}
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.vl {
+  border-left: 6px solid #0E0B16;
+  height: 600px;
+  position: absolute;
+  left: 55%;
+  margin-left: -3px;
+  top: 10%;
+}

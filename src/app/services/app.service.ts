@@ -29,5 +29,17 @@ export class AppService {
       .catch((error: any) => Observable.throw(error.error || 'Server error'));
   }
 
+  getOneBodyPart(id) {
+    return this.http.get(this.security.getSecurityServer() + 'api/body_part',
+        { params: new HttpParams().set('id', id) })
+      .catch((error: any) => Observable.throw(error.error || 'Server error'));
+  }
+
+  getSubparts(id) {
+    return this.http.get(this.security.getSecurityServer() + 'api/sub_parts',
+        { params: new HttpParams().set('id', id) })
+      .catch((error: any) => Observable.throw(error.error || 'Server error'));
+  }
+
 
 }

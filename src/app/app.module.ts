@@ -16,6 +16,8 @@ import { ContactPageComponent } from './components/contact-page/contact-page.com
 
 import { AppService } from './services/app.service';
 import { SecurityService } from './services/security.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { SecurityService } from './services/security.service';
     NavbarComponent,
     LandingPageComponent,
     DashboardComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    FooterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<div class="split left">
+  <div class="centered ">
+    <img class="left" src="{{ imagePath }}" usemap="#image-map">
+
+    <map name="image-map">
+         <area *ngFor="let subpart of subparts" target="" alt="{{ subpart.name }}" title="{{ subpart.name }}" (mouseover)="print(subpart.name)"  coords="{{ subpart.coordinates }}" shape="rect">
+
+    </map>
+  </div>
+
+</div>
+
+<div class="vl"></div>
+
+
+<div class="split right">
+  <div class="center-text">
+      <p>Please select the location of your pain on the photo.</p>
+      <div>
+         {{ message }}
+      </div>
+  </div>
+
+</div>

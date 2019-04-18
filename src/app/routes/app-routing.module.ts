@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './../components/landing-page/landing-page.component';
 import { DashboardComponent } from './../components/dashboard/dashboard.component';
 import { ContactPageComponent } from './../components/contact-page/contact-page.component';
+import { MapComponent } from './../components/map/map.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'home', component: LandingPageComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'contact', component: ContactPageComponent },
+  { path: 'map/:id', component: MapComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
