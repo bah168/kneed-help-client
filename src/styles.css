@@ -194,6 +194,8 @@ body {
   text-align: left;
   margin-right: 1.5rem;
 }
+
+
 .app-title, .title {
   color: #777;
   letter-spacing: 0.1em;
@@ -208,6 +210,15 @@ body {
 }
 .text-standard {
   color: #f2f2f2;
+}
+.text-fuchsia {
+  color: #A239CA
+}
+.text-jewel {
+  color: #4717F6
+}
+.text-stark {
+  color: #E7DFDD
 }
 tbody {
   text-align: left;
