@@ -83,6 +83,7 @@ export class MapComponent implements OnInit {
   }
   hideForm(){
     this.showForm = false;
+    this.message = "Please select the location of your pain on the photo.";
   }
 
   updateSymptomList(id:string){
@@ -92,8 +93,6 @@ export class MapComponent implements OnInit {
     else {
       this.symptomIdList.push(id);
     }
-
-    console.log(this.symptomIdList);
   }
 
   setPage(pageNumber: number): void {

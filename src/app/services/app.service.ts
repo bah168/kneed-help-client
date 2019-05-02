@@ -64,5 +64,16 @@ export class AppService {
     .catch((error: any) => Observable.throw(error.error || 'Server error'));
   }
 
+  getOneResult(id){
+    return this.http.get(this.security.getSecurityServer() + 'api/result',
+        { params: new HttpParams().set('condition_id', id) })
+      .catch((error: any) => Observable.throw(error.error || 'Server error'));
+  }
+
+  contactUs(body){
+    return this.http.post(this.security.getSecurityServer() + 'api/contact_us', body, this.httpOptions)
+    .catch((error: any) => Observable.throw(error.error || 'Server error'));
+  }
+
 
 }

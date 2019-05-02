@@ -11,7 +11,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -26,6 +25,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MapComponent } from './components/map/map.component';
 import { ResultsListComponent } from './components/results-list/results-list.component';
 import { ResultDetailComponent } from './components/result-detail/result-detail.component';
+
+import { AlertComponent } from './directives/alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('access_token');
@@ -42,7 +44,8 @@ export function jwtTokenGetter() {
     FooterComponent,
     MapComponent,
     ResultsListComponent,
-    ResultDetailComponent
+    ResultDetailComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ export function jwtTokenGetter() {
   ],
   providers: [AppService,
               SecurityService,
-              AuthService],
+              AuthService,
+              AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,24 @@
-<p>
-  results-list works!
-</p>
+
+<div class="container">
+  <br>
+  <br>
+      <!-- Page Features -->
+      <div class="row">
+
+        <div class= "col-xs-6 col-md-4" *ngFor="let result of results | paginate: {id: 'server', itemsPerPage: maxSize, currentPage: currentPage, totalItems: totalItems }">
+          <div class="card" routerLink="/detail/{{result.condition_id}}">
+            <div class="card-body">
+              <h5 class="card-title">{{ result.condition_name }}</h5>
+               <h6 class="card-subtitle mb-2 text-muted">symptom matches: {{ result.matches }}</h6>
+               <p class="card-text">{{ result.condition_description }}</p>
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+
+      <div class="controls">
+              <pagination-controls (pageChange)="setPage($event)" id="server" class="ovrd-pagination-settings" directionLinks="true" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"></pagination-controls>
+        </div>
+</div>

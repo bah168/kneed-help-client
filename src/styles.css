@@ -24,6 +24,15 @@ a:hover {
 .pt-5 {
   padding-top: 5rem;
 }
+.pt-6 {
+  padding-top: 6rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}
+.pt-8 {
+  padding-top: 8rem;
+}
 /* Bottom */
 .pb-1 {
   padding-bottom: 1rem;
@@ -225,6 +234,10 @@ tbody {
 }
 footer, nav {
   background-color: black !important;
+}
+
+app-modal {
+  overflow-wrap: break-word;
 }
 
 .button1 {

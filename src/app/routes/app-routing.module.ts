@@ -8,6 +8,7 @@ import { DashboardComponent } from './../components/dashboard/dashboard.componen
 import { ContactPageComponent } from './../components/contact-page/contact-page.component';
 import { MapComponent } from './../components/map/map.component';
 import { ResultsListComponent } from './../components/results-list/results-list.component';
+import { ResultDetailComponent } from './../components/result-detail/result-detail.component'
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'results', component: ResultsListComponent },
   { path: 'map/:id', component: MapComponent },
+  { path: 'detail/:id', component: ResultDetailComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

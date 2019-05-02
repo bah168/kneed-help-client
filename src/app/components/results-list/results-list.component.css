@@ -1,0 +1,58 @@
+
+.col-xs-6, .col-md-3 {
+  /* width: 150px; */
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+ button {
+  position: absolute;
+    bottom: 10%;
+    left: 40%;
+    height: 40px;
+
+}
+
+span {
+  color: #999999 ;
+  font-size: 5rem !important;
+}
+
+.card {
+  width: 310px;
+  height: 185px;
+}
+
+.card:hover {
+  cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.22);
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -7px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.controls {
+  margin-top: 5rem;
+  margin-left: 18rem;
+}
+
+/* .card:hover {
+      cursor: pointer;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.22);
+
+} */
+
+.button:hover {
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.22);
+}
