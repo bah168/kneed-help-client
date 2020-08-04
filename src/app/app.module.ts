@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginationModule } from './directives/pagination/pagination.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from '../environments/environment'
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -17,6 +21,18 @@ import { SampleResultComponent } from './components/sample-result/sample-result.
 
 import { AppService } from './services/app.service';
 import { SecurityService } from './services/security.service';
+import { AuthService } from './services/auth.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { MapComponent } from './components/map/map.component';
+import { ResultsListComponent } from './components/results-list/results-list.component';
+import { ResultDetailComponent } from './components/result-detail/result-detail.component';
+
+import { AlertComponent } from './directives/alert/alert.component';
+import { AlertService } from './services/alert.service';
+
+export function jwtTokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 
 @NgModule({
@@ -26,7 +42,11 @@ import { SecurityService } from './services/security.service';
     LandingPageComponent,
     DashboardComponent,
     ContactPageComponent,
-    SampleResultComponent,
+    FooterComponent,
+    MapComponent,
+    ResultsListComponent,
+    ResultDetailComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +54,22 @@ import { SecurityService } from './services/security.service';
     MatToolbarModule,
     MatButtonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PaginationModule,
+    NgxPaginationModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter,
+        whitelistedDomains: [environment.whiteList]
+      }
+    })
   ],
   providers: [AppService,
-              SecurityService],
+              SecurityService,
+              AuthService,
+              AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

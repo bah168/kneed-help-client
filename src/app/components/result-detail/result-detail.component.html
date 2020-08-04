@@ -1,0 +1,35 @@
+<div class="container">
+  <br>
+  <br>
+
+     <h1> {{ condition?.name }} </h1>
+     <div>
+         {{ condition?.description }}
+     </div>
+     <br>
+     <br>
+     <h3>Symptoms: </h3>
+
+     <ul *ngFor="let symptom of symptoms">
+       <li>{{ symptom.name }}</li>
+     </ul>
+
+     <br>
+     <br>
+
+     <h3>Suggested Exercises/Stretches: </h3>
+     <div *ngFor="let suggestion of suggestions">
+       <br>
+       <h5 style="font-weight: bold;">{{ suggestion.name }}</h5>
+       <div>
+         <p> {{ suggestion.description }} </p>
+       </div>
+
+       <div>
+         <iframe width="560" height="315" [src]='VideoURL(suggestion.link, suggestion.video_start, suggestion.video_end)' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+       <br>
+
+     </div>
+
+</div>

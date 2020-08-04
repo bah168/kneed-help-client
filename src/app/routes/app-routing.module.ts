@@ -6,8 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './../components/landing-page/landing-page.component';
 import { DashboardComponent } from './../components/dashboard/dashboard.component';
 import { ContactPageComponent } from './../components/contact-page/contact-page.component';
-import { SampleResultComponent } from './../components/sample-result/sample-result.component';
-
+import { MapComponent } from './../components/map/map.component';
+import { ResultsListComponent } from './../components/results-list/results-list.component';
+import { ResultDetailComponent } from './../components/result-detail/result-detail.component'
 
 
 
@@ -16,8 +17,10 @@ const routes: Routes = [
   { path: 'home', component: LandingPageComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'contact', component: ContactPageComponent },
-  { path: 'sample-result', component: SampleResultComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'results', component: ResultsListComponent },
+  { path: 'map/:id', component: MapComponent },
+  { path: 'detail/:id', component: ResultDetailComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({

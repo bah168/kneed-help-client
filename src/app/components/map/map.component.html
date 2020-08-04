@@ -1,0 +1,46 @@
+<div class="split left">
+  <div class="centered ">
+    <img class="left" src="{{ imagePath }}" usemap="#image-map" (click)="hideForm()">
+
+    <map name="image-map">
+         <area *ngFor="let subpart of subparts"  target="" alt="{{ subpart.name }}" title="{{ subpart.name }}" (click)="onSelectSubpart(subpart.id)"  coords="{{ subpart.coordinates }}" shape="rect">
+
+    </map>
+  </div>
+
+</div>
+
+<div class="vl"></div>
+
+
+<div class="split right">
+  <div class="center-text">
+      <p>   {{ message }} </p>
+      <div *ngIf="showForm">
+        <form [formGroup]="symptomForm" (ngSubmit)="onSubmit()" novalidate>
+    <label class="border-top text-jewel">Symptoms:</label>
+    <div class="form-group gridIT">
+        <div class="gridITEM" *ngFor="let symptom of symptoms | paginate: {id: 'server', itemsPerPage: maxSize, currentPage: currentPage, totalItems: totalItems }">
+          <div *ngIf="inList(symptom.id)">
+                        <input type="checkbox" (change)="updateSymptomList(symptom.id)" checked /> {{ symptom.name | titlecase }}
+          </div>
+          <div *ngIf="!inList(symptom.id)">
+                          <input *ngIf="!inList(symptom.id)" type="checkbox" (change)="updateSymptomList(symptom.id)" /> {{ symptom.name | titlecase }}
+          </div>
+
+
+        </div>
+    </div>
+   <div>
+       <pagination-controls (pageChange)="setPage($event)" id="server" class="ovrd-pagination-settings" directionLinks="true" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"></pagination-controls>
+   </div>
+    <div class="form-group mt-5">
+        <button data-dismiss="modal" class="button2">Submit</button>
+    </div>
+</form>
+      </div>
+
+
+  </div>
+
+</div>

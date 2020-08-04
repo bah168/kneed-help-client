@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BodyPart } from '../../models/body-part.model';
 import { AppService } from '../../services/app.service';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,9 +24,10 @@ export class DashboardComponent implements OnInit {
   getBodyParts(){
     this.appService.getBodyParts().subscribe(data =>{
       this.bodyParts = data['body_parts'];
-      console.log(this.bodyParts)
     });
   }
+
+
 
 
 
