@@ -17,6 +17,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { AppRoutingModule } from './routes/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { SampleResultComponent } from './components/sample-result/sample-result.component';
 
 import { AppService } from './services/app.service';
 import { SecurityService } from './services/security.service';
